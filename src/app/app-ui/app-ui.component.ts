@@ -20,7 +20,7 @@ export class AppUiComponent {
   data: any[] | undefined;
 
   onSubmit(){
-    alert(this.listOne+' ::  '+this.listTwo+" ::  ---"+this.hashSetType);
+    console.log(this.listOne+' :: '+this.listTwo+" :: "+this.hashSetType);
     this.findIntersectionService.getResult(this.listOne,this.listTwo,this.hashSetType).subscribe((response) => {
       this.data = response;
       console.warn('Response', this.data);
