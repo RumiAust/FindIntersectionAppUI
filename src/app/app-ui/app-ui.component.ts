@@ -18,12 +18,19 @@ export class AppUiComponent {
   listTwo:any;
   hashSetType:string='listOne';
   data: any[] | undefined;
+  timeInMillSec:any;
+  intersectionResult:any;
 
   onSubmit(){
     console.log(this.listOne+' :: '+this.listTwo+" :: "+this.hashSetType);
     this.findIntersectionService.getResult(this.listOne,this.listTwo,this.hashSetType).subscribe((response) => {
       this.data = response;
-      console.warn('Response', this.data);
+      console.warn('Response: ', this.data);
+      this.intersectionResult=response.intersectionList;
+      this,this.timeInMillSec=response.timeInMillSec;
+      console.warn('res: ', this.intersectionResult);
+      console.warn('time: ', this.timeInMillSec);
+
     });
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,8 +12,12 @@ export class FindIntersectService {
 
   getResult(listOne:string, listTwo:string,hashSetType:string):Observable<any>{
     console.log(listOne+'  ----  '+listTwo+"  ---  "+hashSetType);
-    const url = `http://localhost:8080/data?listOne=${listOne}&listTwo=${listTwo}&setListToHash=${hashSetType}`;
-    return this.http.get<any>(url);
+    let params = new HttpParams()
+    .set('param1', listOne)
+    .set('param2', listTwo)
+    .set('param3', hashSetType);
+   const url = 'http://localhost:8080/api/v1/findIntersection';  
+   return this.http.get<any>(url, { params: params });
    }
 
 }
