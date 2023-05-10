@@ -43,7 +43,16 @@
            class="btn btn-success">Submit
         </button> <br>
        </form>
-    
+        <div>
+            <label>
+                List after Intersection
+              </label><br/>
+              <pre>{{ intersectionResult | json}}</pre>
+            <label>
+                Time In Millisec
+              </label><br/>
+            {{timeInMillSec}}
+        </div>
 
      </div>
    </div>
