@@ -23,14 +23,10 @@ export class AppUiComponent {
   showResult:boolean=false;
 
   onSubmit(){
-    console.log(this.listOne+' :: '+this.listTwo+" :: "+this.hashSetType);
-    this.findIntersectionService.getResult(this.listOne,this.listTwo,this.hashSetType).subscribe((response) => {
+      this.findIntersectionService.getResult(this.listOne,this.listTwo,this.hashSetType).subscribe((response) => {
       this.data = response;
-      console.warn('Response: ', this.data);
       this.intersectionResult=response.intersectionList;
       this,this.timeInMillSec=response.timeInMillSec;
-      console.warn('res: ', this.intersectionResult);
-      console.warn('time: ', this.timeInMillSec);
       this.showResult=true;
 
     });

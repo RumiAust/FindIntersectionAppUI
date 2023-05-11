@@ -11,7 +11,6 @@ export class FindIntersectService {
 
 
   getResult(listOne:string, listTwo:string,hashSetType:string):Observable<any>{
-    console.log(listOne+'  ----  '+listTwo+"  ---  "+hashSetType);
     let params = new HttpParams()
     .set('param1', listOne)
     .set('param2', listTwo)
