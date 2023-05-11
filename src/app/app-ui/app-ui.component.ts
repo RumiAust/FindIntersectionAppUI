@@ -20,6 +20,7 @@ export class AppUiComponent {
   data: any[] | undefined;
   timeInMillSec:any;
   intersectionResult:any;
+  showResult:boolean=false;
 
   onSubmit(){
     console.log(this.listOne+' :: '+this.listTwo+" :: "+this.hashSetType);
@@ -30,7 +31,14 @@ export class AppUiComponent {
       this,this.timeInMillSec=response.timeInMillSec;
       console.warn('res: ', this.intersectionResult);
       console.warn('time: ', this.timeInMillSec);
+      this.showResult=true;
 
     });
+  }
+  reset():void{
+    this.listOne='';
+    this.listTwo='';
+    this.hashSetType='listOne';
+    this.showResult=false;
   }
 }
