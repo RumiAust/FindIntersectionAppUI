@@ -49,13 +49,10 @@
         <div *ngIf="showResult" style="margin: 10px;padding:20px; border:1px dashed green ;">
             <h4><p style="text-align:center">Result</p></h4>
             <label style="font-size: 16px;">
-            <b>   List after Intersection [ size : {{listSize}}]</b> 
+            <b>  List after Intersection [ size : {{listSize}}] </b> <br/>
+            <b>  Time  in Milliseconds:  {{timeInMillSec}}</b> 
               </label><br/>
                <pre>{{ intersectionResult | json}}</pre>
-            <label style="font-size: 16px;">
-                <b>   Time In Millisec</b> 
-              </label><br/>
-           {{timeInMillSec}} 
            <br/>
            <button type="button" (click)="reset()"
            class="btn btn-info">Reset
