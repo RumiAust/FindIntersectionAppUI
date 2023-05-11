@@ -20,13 +20,15 @@ export class AppUiComponent {
   data: any[] | undefined;
   timeInMillSec:any;
   intersectionResult:any;
+  listSize:any;
   showResult:boolean=false;
 
   onSubmit(){
       this.findIntersectionService.getResult(this.listOne,this.listTwo,this.hashSetType).subscribe((response) => {
       this.data = response;
       this.intersectionResult=response.intersectionList;
-      this,this.timeInMillSec=response.timeInMillSec;
+      this.timeInMillSec=response.timeInMillSec;
+      this.listSize=response.listSize;
       this.showResult=true;
 
     });
